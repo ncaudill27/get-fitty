@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 import { makeStyles } from '@material-ui/core/styles'
 import Fab from '@material-ui/core/Fab';
@@ -43,14 +44,16 @@ const Navbar = () => {
   return (
     <nav position='fixed' className={classes.root} style={{backgroundColor: `var(--accent-color, #E2E2E2)`}}>
       <div className={classes.mainButton}>
-        <Fab
-          aria-label='add'
-          variant='extended'
-          size='large'
-          style={{backgroundColor: `var(--accent-color, #00FFD1)`}}>
-          <AddIcon className={classes.buttonIcon} />
-            Get Fitty
-        </Fab>
+        <Link to='/workout'>
+          <Fab
+            aria-label='add'
+            variant='extended'
+            size='large'
+            style={{backgroundColor: `var(--accent-color, #00FFD1)`}}>
+            <AddIcon className={classes.buttonIcon} />
+              Get Fitty
+          </Fab>
+        </Link>
       </div>
       <div className={classes.barItem}>3</div>
       <div className={classes.barItem}>4</div>
