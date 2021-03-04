@@ -9,7 +9,8 @@ import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh'
 const useStyles = makeStyles(theme => ({
   root: {
     padding: '1rem 1rem 2rem',
-    boxShadow: '2px 2px 5px 1px rgba(0, 0, 0, 0.3)'
+    boxShadow: '2px 2px 5px 1px rgba(0, 0, 0, 0.3)',
+    backgroundColor: theme.palette.primary.main
   },
   avatar: {
     width: '45px',
@@ -28,7 +29,7 @@ const Welcome = () => {
   const classes = useStyles()
 
   return (
-    <Box component='section' className={classes.root} style={{backgroundColor: `var(--accent-color, #00FFD1)`}}>
+    <Box component='section' className={classes.root}>
       <AccountCircleIcon className={classes.avatar} />
       <div className={classes.weather}>
         <Typography variant='caption'>

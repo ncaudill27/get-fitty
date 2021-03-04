@@ -1,11 +1,12 @@
 import { createMuiTheme } from '@material-ui/core/styles';
+import cyan from '@material-ui/core/colors/cyan'
 
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#6dcbe0',
-      light: '#a2feff',
-      dark: '#349aae'
+      main: cyan[500],
+      light: cyan[400],
+      dark: cyan[600]
     },
     secondary: {
       main: '#eaa29f',
@@ -13,7 +14,9 @@ export const theme = createMuiTheme({
       dark: '#b67371'
     },
     background: {
-      default: '#bd2e2e'
+      light: '#F7F8F2',
+      medium: '#E2E2E2',
+      dark: '#C4C4C4'
     },
   },
   typography: {

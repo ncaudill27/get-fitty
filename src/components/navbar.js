@@ -16,8 +16,9 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
+    backgroundColor: theme.palette.background.medium,
   },
-  mainButton: {
+  buttonContainer: {
     minWidth: '160px',
     marginLeft: theme.spacing(1),
     flexGrow: '2',
@@ -26,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
   },
   buttonIcon: {
-    marginRight: theme.spacing(1)
+    marginRight: theme.spacing(1),
   },
   barItem: {
     display: 'flex',
@@ -42,18 +43,20 @@ const Navbar = () => {
   const classes = useStyles()
   
   return (
-    <nav position='fixed' className={classes.root} style={{backgroundColor: `var(--accent-color, #E2E2E2)`}}>
-      <div className={classes.mainButton}>
-        <Link to='/workout'>
+    <nav position='fixed' className={classes.root}>
+      <div className={classes.buttonContainer}>
           <Fab
-            aria-label='add'
+            color='primary'
+            component={Link}
+            to='/workout'
             variant='extended'
             size='large'
-            style={{backgroundColor: `var(--accent-color, #00FFD1)`}}>
-            <AddIcon className={classes.buttonIcon} />
+          >
+            <AddIcon
+              className={classes.buttonIcon}
+            />
               Get Fitty
           </Fab>
-        </Link>
       </div>
       <div className={classes.barItem}>3</div>
       <div className={classes.barItem}>4</div>
