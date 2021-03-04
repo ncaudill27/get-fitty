@@ -44,9 +44,10 @@ export const theme = createMuiTheme({
     }
   },
   overrides: {
-    MuiPaper: {
-      root: {
-        backgroundColor: '#ffd4d0'
+    MuiButton: {
+      containedSizeSmall: {
+        fontSize: '0.9rem',
+        fontWeight: 'bold'
       }
     }
   }
