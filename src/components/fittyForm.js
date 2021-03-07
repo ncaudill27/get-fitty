@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
+import WorkoutTypeContainer from './workoutTypeContainer'
 
 import { withStyles } from '@material-ui/core/styles'
 
@@ -30,26 +31,34 @@ const styles = theme => ({
 
 const FittyForm = ({classes}) => {
 
+  const [workoutName, setWorkoutName] = useState(null)
   const [workoutType, setWorkoutType] = useState(null)
+  const handleChange = setFn => e => {
+    console.log(e.target.value)
+    setFn(e.target.value)
+  }
 
 
   return (
     <div className={classes.root}>
       <TextField
-        className={classes.input}
+        size='small'
         variant='outlined'
         label='New Workout Name'
-        size='small'
+        className={classes.input}
       />
       <Button // to render unique list of past workouts
-        className={classes.button}
-        variant='contained'
-        color='primary'
         size='small'
+        color='primary'
+        variant='contained'
+        className={classes.button}
       >
         Level Up
       </Button>
-      
+      <WorkoutTypeContainer
+        workoutType={workoutType}
+        handleChange={handleChange(setWorkoutType)}
+      />
     </div>
   )
 }

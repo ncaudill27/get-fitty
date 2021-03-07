@@ -1,13 +1,17 @@
 import React from 'react'
-import { useStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 
 import WorkoutTypeButton from './workoutTypeButton'
 
-const useStyles = useStyles(theme => ({
+const useStyles = makeStyles(theme => ({
   root: {
+    width: '100%',
+    height: '85px',
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
-    justifyItems: 'center'
+    gridTemplateRows: '1fr',
+    justifyItems: 'center',
+    alignItems: 'center'
   }
 }))
 

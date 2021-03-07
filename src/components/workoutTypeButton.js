@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './workouTypeButton.module.css'
+import styles from './workoutTypeButton.module.css'
 
 const WorkoutTypeButton = ({children, workoutType, value, ...props}) => {
 
@@ -16,7 +16,7 @@ const WorkoutTypeButton = ({children, workoutType, value, ...props}) => {
         checked={workoutType === value}
       />
       <label
-        htmlFor={workoutType}
+        htmlFor={value}
         className={styles.label}
       >
         {children}
