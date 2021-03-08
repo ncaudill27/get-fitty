@@ -33,11 +33,7 @@ const FittyForm = ({classes}) => {
 
   const [workoutName, setWorkoutName] = useState(null)
   const [workoutType, setWorkoutType] = useState(null)
-  const handleChange = setFn => e => {
-    console.log(e.target.value)
-    setFn(e.target.value)
-  }
-
+  const handleChange = setFn => e => setFn(e.target.value)
 
   return (
     <div className={classes.root}>
