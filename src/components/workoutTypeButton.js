@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   label: {
+    position: 'relative',
     width: '75px',
     height: '75px',
     backgroundColor: 'rgba(0, 0, 0, 0)',
@@ -16,6 +17,12 @@ const useStyles = makeStyles(theme => ({
       height: '85px',
       backgroundColor: theme.palette.primary.main,
     }
+  },
+  icon: {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)'
   }
 }))
 
@@ -37,7 +44,9 @@ const WorkoutTypeButton = ({children, workoutType, value, ...props}) => {
         htmlFor={value}
         className={classes.label}
       >
-        {children}
+        <div className={classes.icon}>
+          {children}
+        </div>
       </label>
     </>
   )

@@ -3,6 +3,10 @@ import { makeStyles } from '@material-ui/core/styles'
 
 import WorkoutTypeButton from './workoutTypeButton'
 
+import Dumbbell from '../images/svg/dumbell-icon.svg'
+import Kettlebell from '../images/svg/kettlebell-icon.svg'
+import Runner from '../images/svg/runner-icon.svg'
+
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
@@ -24,17 +28,23 @@ const WorkoutTypeContainer = ({handleChange, workoutType}) => {
         value='LIFT'
         workoutType={workoutType}
         onChange={handleChange}
-      />
+      >
+        <Dumbbell />
+      </WorkoutTypeButton>
       <WorkoutTypeButton
         value='HIIT'
         workoutType={workoutType}
         onChange={handleChange}
-      />
+      >
+        <Kettlebell />
+      </WorkoutTypeButton>
       <WorkoutTypeButton
         value='CARDIO'
         workoutType={workoutType}
         onChange={handleChange}
-      />
+      >
+        <Runner />
+      </WorkoutTypeButton>
     </div>
   )
 }
