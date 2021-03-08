@@ -9,6 +9,7 @@ import Runner from '../images/svg/runner-icon.svg'
 
 const useStyles = makeStyles(theme => ({
   root: {
+    marginBottom: theme.spacing(4),
     width: '100%',
     height: '85px',
     display: 'grid',

@@ -1,62 +1,34 @@
 import React, { useState } from 'react'
 
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
 import WorkoutTypeContainer from './workoutTypeContainer'
-
-import { withStyles } from '@material-ui/core/styles'
-
-const styles = theme => ({
-  root: {
-    margin: '2rem 1rem',
-    display: 'flex',
-    flexWrap: 'wrap',
-    '& > *': {
-      marginBottom: theme.spacing(2),
-      '@media (max-width: 357px)': {
-        width: '100%'
-      }
-    }
-  },
-  input: {
-    flexGrow: 2,
-    '@media (min-width: 357px)': {
-      marginRight: theme.spacing(2),
-    }
-  },
-  button: {
-    flexGrow: 1
-  }
-})
+import LiftInputs from './inputsLift'
+import InputButtonPairContainer from './pairInputButton'
 
 const FittyForm = ({classes}) => {
 
-  const [workoutName, setWorkoutName] = useState(null)
+  const [workoutName, setWorkoutName] = useState('')
   const [workoutType, setWorkoutType] = useState(null)
   const handleChange = setFn => e => setFn(e.target.value)
-
+  
+  const isLift = () => workoutType === 'LIFT'
+  const isHiit = () => workoutType === 'HIIT'
+  const isCardio = () => workoutType === 'CARDIO'
+  
   return (
-    <div className={classes.root}>
-      <TextField
-        size='small'
-        variant='outlined'
-        label='New Workout Name'
-        className={classes.input}
+    <>
+      <InputButtonPairContainer
+        inputLabel='New Workout Name'
+        inputValue={workoutName}
+        buttonText='Level Up'
+        handleChange={handleChange(setWorkoutName)}
       />
-      <Button // to render unique list of past workouts
-        size='small'
-        color='primary'
-        variant='contained'
-        className={classes.button}
-      >
-        Level Up
-      </Button>
       <WorkoutTypeContainer
         workoutType={workoutType}
         handleChange={handleChange(setWorkoutType)}
       />
-    </div>
+      {isLift() && <LiftInputs />}
+    </>
   )
 }
 
-export default withStyles(styles)(FittyForm)
+export default FittyForm
