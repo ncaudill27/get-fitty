@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
     height: '75px',
     backgroundColor: 'rgba(0, 0, 0, 0)',
     border: `3px solid ${theme.palette.primary.main}`,
-    transition: 'all ease-in-out 500ms',
+    transition: 'all ease-in-out 50ms',
     borderRadius: '50%',
   },
   input: {
