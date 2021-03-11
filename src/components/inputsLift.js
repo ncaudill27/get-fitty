@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 
 import InputButtonPairContainer from './pairInputButton'
 
-import { makeStyles } from '@material-ui/core/styles'
+// import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles(theme => ({
+// const useStyles = makeStyles(theme => ({
 
-}))
+// }))
 
 const LiftInputs = () => {
-  const classes = useStyles()
+  // const classes = useStyles()
 
   const [liftName, setLiftName] = useState('')
   const handleChange = e => setLiftName(e.target.value)
